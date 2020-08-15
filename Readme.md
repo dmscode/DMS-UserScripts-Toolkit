@@ -1,4 +1,4 @@
-DMS UserScript Toolkit
+DMS UserScripts Toolkit
 ===
 
 GreasyMonkey 脚本工具类
