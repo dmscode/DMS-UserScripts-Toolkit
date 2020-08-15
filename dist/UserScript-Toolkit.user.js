@@ -118,6 +118,13 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"epB2":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Toolkit = void 0;
+
 function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
 
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
@@ -139,7 +146,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
  * @author 稻米鼠
  * @version 0.0.1
  */
-var DMS_Toolkit = /*#__PURE__*/function () {
+var Toolkit = /*#__PURE__*/function () {
   // GreasyMonkey Api 对象
   // debug 状态
 
@@ -147,10 +154,10 @@ var DMS_Toolkit = /*#__PURE__*/function () {
    * Tag: 构造函数
    * @param {*} GM GreasyMonkey Api 对象
    */
-  function DMS_Toolkit() {
+  function Toolkit() {
     var GM = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
-    _classCallCheck(this, DMS_Toolkit);
+    _classCallCheck(this, Toolkit);
 
     _defineProperty(this, "version", '0.0.1');
 
@@ -169,7 +176,9 @@ var DMS_Toolkit = /*#__PURE__*/function () {
     this.badge('DMS UserScripts Toolkit', this.version, 'https://greasyfork.org/zh-CN/scripts/408776');
 
     if (this.GM_info && this.GM_info.script && this.GM_info.script.name && this.GM_info.script.version) {
-      this.badge(this.GM_info.script.name, this.GM_info.script.version, this.GM_info.script.description ? this.GM_info.script.description : '');
+      this.badge(this.GM_info.script.name, this.GM_info.script.version, this.GM_info.script.description ? this.GM_info.script.description : '', {
+        rightBGColor: '#71baeb'
+      });
     }
   }
   /**
@@ -179,7 +188,7 @@ var DMS_Toolkit = /*#__PURE__*/function () {
    */
 
 
-  _createClass(DMS_Toolkit, [{
+  _createClass(Toolkit, [{
     key: "info",
     value: function info(by) {
       for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
@@ -243,11 +252,13 @@ var DMS_Toolkit = /*#__PURE__*/function () {
         rightBGColor: '#ffc107',
         rightColor: '#262318'
       }, options);
-      console[opt.type]('%c' + leftText + '%c' + rightText + endText ? '%c - ' + endText : '', 'color: ' + opt.leftColor + '; ' + 'background-color: ' + opt.leftBGColor + '; ' + 'border-radius: 3px 0 0 3px;' + 'padding: 0 5px', 'color: ' + opt.rightColor + '; ' + 'background-color: ' + opt.rightBGColor + '; ' + 'border-radius: 0 3px 3px 0;' + 'padding: 0 5px;', '');
+      console[opt.type]('%c' + leftText + '%c' + rightText + (endText ? '%c - ' + endText : ''), 'color: ' + opt.leftColor + '; ' + 'background-color: ' + opt.leftBGColor + '; ' + 'border-radius: 3px 0 0 3px;' + 'padding: 0 5px', 'color: ' + opt.rightColor + '; ' + 'background-color: ' + opt.rightBGColor + '; ' + 'border-radius: 0 3px 3px 0;' + 'padding: 0 5px;', '');
     }
   }]);
 
-  return DMS_Toolkit;
+  return Toolkit;
 }();
-},{}]},{},["epB2"], null)
+
+exports.Toolkit = Toolkit;
+},{}]},{},["epB2"], "DMS_UserScripts")
 //# sourceMappingURL=/UserScript-Toolkit.user.js.map

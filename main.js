@@ -3,10 +3,10 @@
  * GreasyMonkey 脚本工具类
  * @description 因脚本中一些基础功能函数需要复用，所以写了这个小的工具库。为对用户安全负责，并符合 GreasyFork 审核规则，代码未作压缩，仅用 Parcel 简单过了一下，一方面是为了用 babel 转码，另一方为后期分文件书写不同类别功能做准备。
  * @author 稻米鼠
- * @version 0.0.1
+ * @version 0.0.2
  */
-class DMS_Toolkit {
-  version = '0.0.1'
+export class Toolkit {
+  version = '0.0.2'
   GM = {};  // GreasyMonkey Api 对象
   is_debug = false; // debug 状态
   /**
@@ -24,7 +24,7 @@ class DMS_Toolkit {
     // 输出版本标记
     this.badge('DMS UserScripts Toolkit', this.version, 'https://greasyfork.org/zh-CN/scripts/408776')
     if(this.GM_info && this.GM_info.script && this.GM_info.script.name && this.GM_info.script.version){
-      this.badge(this.GM_info.script.name, this.GM_info.script.version, this.GM_info.script.description ? this.GM_info.script.description : '')
+      this.badge(this.GM_info.script.name, this.GM_info.script.version, this.GM_info.script.description ? this.GM_info.script.description : '', { rightBGColor: '#71baeb' })
     }
   }
   /**
@@ -44,7 +44,7 @@ class DMS_Toolkit {
     }
   }
   /**
-   * Debug 输出，仅开发时输出
+   * Tag: Debug 输出，仅开发时输出
    * @param  {...any} args 参数同上
    */
   dblog(...args){
@@ -69,15 +69,18 @@ class DMS_Toolkit {
     }, options)
     console[opt.type](
       '%c'+leftText+'%c'+rightText
-      + endText ? '%c - '+endText : '',
+      + (endText ? '%c - '+endText : ''),
+
       'color: '+opt.leftColor+'; '
       +'background-color: '+opt.leftBGColor+'; '
       +'border-radius: 3px 0 0 3px;'
       +'padding: 0 5px',
+
       'color: '+opt.rightColor+'; '
       +'background-color: '+opt.rightBGColor+'; '
       +'border-radius: 0 3px 3px 0;'
       +'padding: 0 5px;',
+
       '',
     )
   }
