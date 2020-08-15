@@ -144,7 +144,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
  * GreasyMonkey 脚本工具类
  * @description 因脚本中一些基础功能函数需要复用，所以写了这个小的工具库。为对用户安全负责，并符合 GreasyFork 审核规则，代码未作压缩，仅用 Parcel 简单过了一下，一方面是为了用 babel 转码，另一方为后期分文件书写不同类别功能做准备。
  * @author 稻米鼠
- * @version 0.0.1
+ * @version 0.0.2
  */
 var Toolkit = /*#__PURE__*/function () {
   // GreasyMonkey Api 对象
@@ -159,7 +159,7 @@ var Toolkit = /*#__PURE__*/function () {
 
     _classCallCheck(this, Toolkit);
 
-    _defineProperty(this, "version", '0.0.1');
+    _defineProperty(this, "version", '0.0.2');
 
     _defineProperty(this, "GM", {});
 
@@ -218,7 +218,7 @@ var Toolkit = /*#__PURE__*/function () {
       }
     }
     /**
-     * Debug 输出，仅开发时输出
+     * Tag: Debug 输出，仅开发时输出
      * @param  {...any} args 参数同上
      */
 
