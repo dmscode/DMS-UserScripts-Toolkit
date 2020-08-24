@@ -1,7 +1,7 @@
 DMS UserScripts Toolkit
 ===
 
-![](https://img.shields.io/badge/Version-0.0.3-blue?style=for-the-badge)
+![](https://img.shields.io/badge/Version-```version```-blue?style=for-the-badge)
 
 GreasyMonkey 脚本工具类
 

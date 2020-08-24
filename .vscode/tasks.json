@@ -1,0 +1,17 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+    {
+      "label": "Build",
+      "type": "shell",
+      "command": "node ./keys-replacer.js; parcel build ./main.js --out-file UserScript-Toolkit.user.js --no-minify --no-source-maps --global DMS_UserScripts",
+      "group": "build"
+    },
+    {
+      "label": "JSdoc",
+      "type": "shell",
+      "command": "node ./keys-replacer.js; rm -r ./docs; yarn jsdoc -c ./conf.json",
+      "group": "test"
+    }
+  ]
+}

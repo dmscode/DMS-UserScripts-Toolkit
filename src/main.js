@@ -2,7 +2,7 @@
  * @file DMS UserScripts Toolkit
  *
  * @author 稻米鼠
- * @version 0.0.3
+ * @version ```version```
  */
 /**
  * @classdesc GreasyMonkey 脚本工具类
@@ -18,7 +18,7 @@ export class Toolkit {
    * @name version
    * @memberof Toolkit
    */
-  version = '0.0.3'
+  version = '```version```'
   /**
    * @summary 当前是否处于 debug 状态。
    * @description **Debug 模式开启方法：** 手动为此脚本设置一个数据： `is_debug: 1`（在脚本设置页面中）。值可以任意，因为会当作字符串处理，所以不为空即为真。

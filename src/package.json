@@ -1,6 +1,6 @@
 {
   "name": "dms_userscripts_toolkit",
-  "version": "0.0.3",
+  "version": "```version```",
   "dependencies": {
     "docdash": "^1.2.0",
     "jsdoc": "^3.6.5"

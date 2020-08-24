@@ -1,4 +1,48 @@
-/**
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>main.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Toolkit.html">Toolkit</a><ul class='members'><li data-type='member'><a href="Toolkit.html#.version">version</a></li><li data-type='member'><a href="Toolkit.html#.is_debug">is_debug</a></li></ul><ul class='methods'><li data-type='method'><a href="Toolkit.html#info">info</a></li><li data-type='method'><a href="Toolkit.html#dblog">dblog</a></li><li data-type='method'><a href="Toolkit.html#badge">badge</a></li><li data-type='method'><a href="Toolkit.html#getData">getData</a></li><li data-type='method'><a href="Toolkit.html#setData">setData</a></li><li data-type='method'><a href="Toolkit.html#removeData">removeData</a></li><li data-type='method'><a href="Toolkit.html#listData">listData</a></li><li data-type='method'><a href="Toolkit.html#proxyData">proxyData</a></li><li data-type='method'><a href="Toolkit.html#proxyKey">proxyKey</a></li><li data-type='method'><a href="Toolkit.html#menuLink">menuLink</a></li><li data-type='method'><a href="Toolkit.html#menuToggleBasic">menuToggleBasic</a></li><li data-type='method'><a href="Toolkit.html#menuToggle">menuToggle</a></li><li data-type='method'><a href="Toolkit.html#pageObserverInit">pageObserverInit</a></li><li data-type='method'><a href="Toolkit.html#recordsPreProcessing">recordsPreProcessing</a></li><li data-type='method'><a href="Toolkit.html#addStyle">addStyle</a></li></ul></li><li><a href="Toolkit.exports.Toolkit.html">exports.Toolkit</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">main.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
  * @file DMS UserScripts Toolkit
  *
  * @author 稻米鼠
@@ -48,11 +92,11 @@ export class Toolkit {
     }
     // 设定是否是开发状态
     this.is_debug =
-      this.GM_getValue && this.GM_getValue('is_debug', false) ? true : false;
+      this.GM_getValue &amp;&amp; this.GM_getValue('is_debug', false) ? true : false;
     // 输出版本标记
     if (self != top) return // 框架中页面不输出，避免重复
     this.badge('DMS UserScripts Toolkit', this.version, 'https://script.izyx.xyz')
-    if(this.GM_info && this.GM_info.script && this.GM_info.script.name && this.GM_info.script.version){
+    if(this.GM_info &amp;&amp; this.GM_info.script &amp;&amp; this.GM_info.script.name &amp;&amp; this.GM_info.script.version){
       this.badge(this.GM_info.script.name, this.GM_info.script.version, this.GM_info.script.description ? this.GM_info.script.description : '', { rightBGColor: '#71baeb' })
     }
     // Debug 时输出获得的 API
@@ -98,7 +142,7 @@ export class Toolkit {
   }
   /**
    * @summary 徽章输出
-   * @description 类似这种效果 ![](https://img.shields.io/badge/%E5%B7%A6%E4%BE%A7%E6%96%87%E5%AD%97-%E5%8F%B3%E4%BE%A7%E6%96%87%E5%AD%97-%23ffc107?style=flat&labelColor=555555)， 但并不一致。具体可在引用此库，并正确初始化后看控制台输出。其实除了好看也没什么特别的用途。
+   * @description 类似这种效果 ![](https://img.shields.io/badge/%E5%B7%A6%E4%BE%A7%E6%96%87%E5%AD%97-%E5%8F%B3%E4%BE%A7%E6%96%87%E5%AD%97-%23ffc107?style=flat&amp;labelColor=555555)， 但并不一致。具体可在引用此库，并正确初始化后看控制台输出。其实除了好看也没什么特别的用途。
    * @param {string} leftText 徽章左侧文字
    * @param {string} rightText 徽章右侧文字
    * @param {string} endText 徽章后描述
@@ -451,7 +495,7 @@ export class Toolkit {
    * @param {any} defaultValue={} 默认值，可省略
    */
   proxyData(type, dataName, defaultValue={}){
-    if(typeof(defaultValue) !== 'undefined' && !(defaultValue instanceof Object) ){
+    if(typeof(defaultValue) !== 'undefined' &amp;&amp; !(defaultValue instanceof Object) ){
       this.dblog('The defaultValue must be an object, and the proxy method can only be used to observe a change in an object\'s property value.')
       return
     }
@@ -504,7 +548,7 @@ export class Toolkit {
   proxyDataAuto (...args){
     let type = 'local'
     if (
-      this.hasGMApi('GM_getValue', 'proxyDataAuto') &&
+      this.hasGMApi('GM_getValue', 'proxyDataAuto') &amp;&amp;
       this.hasGMApi('GM_setValue', 'proxyDataAuto')
     ) {
       if(this.getGMData('GM_Can_be_Used', false)){
@@ -571,7 +615,7 @@ export class Toolkit {
   proxyKeyAuto (...args){
     let type = 'local'
     if (
-      this.hasGMApi('GM_getValue', 'proxyKeyAuto') &&
+      this.hasGMApi('GM_getValue', 'proxyKeyAuto') &amp;&amp;
       this.hasGMApi('GM_setValue', 'proxyKeyAuto')
     ) {
       if(this.getGMKey('GM_Can_be_Used', false)){
@@ -628,7 +672,7 @@ export class Toolkit {
   */
   menuToggleBasic (getter, setter, onName, offName, reload=true, callback){
     if(!this.hasGMApi('GM_registerMenuCommand', 'toggleMenu')) return
-    if(!reload && !this.hasGMApi('GM_unregisterMenuCommand', 'toggleMenu')) return
+    if(!reload &amp;&amp; !this.hasGMApi('GM_unregisterMenuCommand', 'toggleMenu')) return
     const registerMenu = ()=>{
       const nowState = getter()
       const menuName = nowState ? onName : offName
@@ -770,3 +814,28 @@ export class Toolkit {
     document.head.appendChild(style)
   }
 }
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.5</a> on Mon Aug 24 2020 20:04:21 GMT+0800 (GMT+08:00) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+
+
+</body>
+</html>

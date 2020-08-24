@@ -1,1 +1,0 @@
-parcel build .\main.js --out-file UserScript-Toolkit.user.js --no-minify --global DMS_UserScripts

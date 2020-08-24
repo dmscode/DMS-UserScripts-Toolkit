@@ -1,0 +1,18 @@
+{
+  "source": {
+    "include": [ "./Readme.md", "./main.js" ]
+  },
+  "opts": {
+    "destination": "./docs/",
+    "template": "node_modules/docdash"
+  },
+  "docdash": {
+    "static": true,
+    "sort": false,
+    "cleverLinks": false,
+    "monospaceLinks": false
+  },
+  "plugins": [
+    "plugins/markdown"
+  ]
+}
