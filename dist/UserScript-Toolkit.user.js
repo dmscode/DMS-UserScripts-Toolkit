@@ -1,3 +1,10 @@
+// ==UserScript==
+// @name DMS UserScripts Toolkit
+// @author 稻米鼠
+// @description A lib for easy to write userscript.
+// @version 0.0.4
+// ==UserScript==
+
 // modules are defined as an array
 // [ module function, map of requires ]
 //
@@ -132,6 +139,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
  *
  * @author 稻米鼠
  * @version 0.0.3
+ * @update 2020-8-29 09:06:16
  */
 
 /**

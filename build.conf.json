@@ -1,0 +1,14 @@
+{
+  "files": [
+    {
+      "in": "./src/template.js",
+      "out": "./dist/UserScript-Toolkit.user.js"
+    }
+  ],
+  "fileKeys": [
+    {
+      "key": "UserScript-Toolkit",
+      "file": "./dist/UserScript-Toolkit.user.js"
+    }
+  ]
+}

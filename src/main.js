@@ -3,6 +3,7 @@
  *
  * @author 稻米鼠
  * @version ```version```
+ * @update ```nowTime```
  */
 /**
  * @classdesc GreasyMonkey 脚本工具类

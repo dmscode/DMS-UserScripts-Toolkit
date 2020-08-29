@@ -7,10 +7,6 @@
     {
       "in": "./src/Readme.md",
       "out": "./Readme.md"
-    },
-    {
-      "in": "./src/package.json",
-      "out": "./package.json"
     }
   ],
   "keys": {

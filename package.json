@@ -1,11 +1,15 @@
 {
   "name": "dms_userscripts_toolkit",
-  "version": "0.0.3",
+  "version": "0.0.4",
+  "author": "稻米鼠",
   "dependencies": {
     "docdash": "^1.2.0",
     "jsdoc": "^3.6.5"
   },
   "browserslist": [
     "since 2017-06"
-  ]
+  ],
+  "devDependencies": {
+    "@dmouse/keyswords_replacer": "^1.0.3"
+  }
 }
